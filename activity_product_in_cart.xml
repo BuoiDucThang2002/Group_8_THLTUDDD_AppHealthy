@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary"
+    tools:context=".ProductInCart">
+
+    <!-- Phần đầu của layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:gravity="bottom"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/iconback"
+            android:layout_marginLeft="20dp"
+            android:background="@color/primary"
+            android:contentDescription="ảnh"
+            android:layout_gravity="bottom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giỏ hàng"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:paddingRight="70dp" />
+    </LinearLayout>
+
+    <!-- ListView -->
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:divider="@color/bgr"
+    android:dividerHeight="10dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/bgr"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:gravity="end"> <!-- Căn tất cả các phần tử về bên phải -->
+
+        <!-- TextView hiển thị số tiền -->
+        <TextView
+            android:id="@+id/tongtien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0đ"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="20dp" /> <!-- Khoảng cách với nút -->
+
+        <!-- Nút Thanh toán -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/Dathang"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/button_background"
+            android:text="Thanh toán"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
