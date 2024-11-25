@@ -1,0 +1,114 @@
+package com.example.quanlybanhang;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.ContentValues;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.quanlybanhang.database.CreateDatabase;
+
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
+public class CartProduct extends AppCompatActivity {
+    ListView listView;
+    TextView tongtien,tienhang;
+    EditText hoten,sdt,diachi,tinh,huyen,xa;
+    Button dathang;
+
+    int sum=0;
+    SQLiteDatabase database;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cart_product);
+        listView=findViewById(R.id.list);
+        tongtien=findViewById(R.id.tongtien);
+        tienhang=findViewById(R.id.tienhang);
+        hoten=findViewById(R.id.ten);
+        sdt=findViewById(R.id.sdt);
+        diachi=findViewById(R.id.diachi);
+        tinh=findViewById(R.id.tinh);
+        huyen=findViewById(R.id.quanhuyen);
+        xa=findViewById(R.id.phuongxa);
+        dathang=findViewById(R.id.Dathang);
+        Intent intent=getIntent();
+        Bundle bundle=intent.getBundleExtra("Bundle");
+        int maDH=bundle.getInt("MaDH");
+        CreateDatabase createDatabase= new CreateDatabase(this);
+        database=createDatabase.open();
+        String LayDuLieuTheoLoai="Select SANPHAM.TenSP, HANGTRONGDON.Soluong, HANGTRONGDON.Gia, (HANGTRONGDON.Gia*HANGTRONGDON.Soluong) as Thanhtien,SANPHAM.Anh from HANGTRONGDON,SANPHAM where HANGTRONGDON.MaSP=SANPHAM.MaSP and HANGTRONGDON.MaDH=?";
+        Cursor cursor=null;
+        try {
+            cursor= database.rawQuery(LayDuLieuTheoLoai,new String[]{""+maDH});
+
+        }catch (Exception exception){
+            Toast.makeText(CartProduct.this, "Lỗi csdl", Toast.LENGTH_SHORT).show();
+        }
+        ArrayList<String> tenList = new ArrayList<>();
+        ArrayList<String> soluongList = new ArrayList<>();
+        ArrayList<String> giaList = new ArrayList<>();
+        ArrayList<String> thanhtien = new ArrayList<>();
+        ArrayList<String> anh = new ArrayList<>();
+
+
+
+
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                String tenlist=cursor.getString(0);//Lấy giá trị cột
+                tenList.add(tenlist);
+                String soluong = cursor.getString(1); // Lấy giá trị cột
+                soluongList.add(soluong);
+                String gia=cursor.getString(2);//Lấy giá trị cột
+                giaList.add(gia);
+                String tt=cursor.getString(3);//Lấy giá trị cột
+                thanhtien.add(tt);
+                anh.add(cursor.getString(4));//Lấy giá trị cột
+
+            } while (cursor.moveToNext());
+            cursor.close();
+        }
+
+        for(int i=0;i<thanhtien.toArray(new String[0]).length;i++)
+        {
+            sum+=Integer.parseInt(thanhtien.toArray(new String[0])[i]);//hàm tính tiền
+        }
+        tongtien.setText(""+formatCurrency(sum));//hiện thị giá trị hàm sum dưới dạng tiền tệ
+        tienhang.setText(""+formatCurrency(sum));
+        CustomAdapterCartOder customAdapterCartOder= new CustomAdapterCartOder(tenList.toArray(new String[0]),giaList.toArray(new String[0]),soluongList.toArray(new String[0]),thanhtien.toArray(new String[0]),anh.toArray(new String[0]), this);
+        listView.setAdapter(customAdapterCartOder);
+
+        dathang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              String Update="UPDATE DONHANG SET GiaDH=? , Ngaydat=?, Trangthai=? , Diachi=? where MaDH=?";
+                Date currentDate = new Date();
+                database.execSQL(Update, new Object[]{
+                        sum,  // Numeric value for the price
+                        currentDate,  // Formatted date for the "Ngaydat" field
+                        "Waiting",  // Status
+                        diachi.getText().toString() + ", " + tinh.getText().toString() + ", " + huyen.getText().toString() + ", " + xa.getText().toString()
+                ,maDH
+                });
+                Toast.makeText(CartProduct.this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+                Intent intent1= new Intent(CartProduct.this,Home.class);
+                startActivity(intent1);
+            }
+        });
+    }
+    private String formatCurrency(int amount) {
+        NumberFormat formatter = NumberFormat.getInstance(new Locale("vi", "VN"));//định dạng việt nam
+        return formatter.format(amount) + "đ";//mệnh giá VND viết tắt là đ
+    }
