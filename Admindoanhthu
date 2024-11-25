@@ -1,0 +1,45 @@
+package com.example.quanlybanhang;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import android.os.Bundle;
+import android.widget.RelativeLayout;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+public class Admindoanhthu extends AppCompatActivity {
+
+    RelativeLayout frame;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admindoanhthu);
+        frame=findViewById(R.id.frame);
+        BottomNavigationView bottomNavigationView= findViewById(R.id.menu_bottom);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;//Khởi tạo một biến selectedFragment kiểu Fragment, và gán giá trị mặc định là null. Đây là biến sẽ lưu trữ Fragment được chọn để hiển th
+            if (item.getItemId() == R.id.navigation_home) {//Kiểm tra xem mục có ID navigation_home có được chọn hay không.
+                selectedFragment = new DoanhThuFRM();//Nếu mục "Home" được chọn, một đối tượng DoanhThuFRM (là một Fragment) sẽ được khởi tạo và gán cho selectedFragment.
+            } else if (item.getItemId() == R.id.navigation_search) {
+                selectedFragment = new AdminListProductFRM();
+            } else if (item.getItemId() == R.id.navigation_notifications) {
+                selectedFragment =  new KhachHangFRM();
+            } else if (item.getItemId() == R.id.navigation_profile) {
+                selectedFragment = new CaNhanFRM();
+            }
+            if (selectedFragment != null) {
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.frame, selectedFragment)  // Thay đổi nội dung của FrameLayout
+                        .commit();
+            }
+
+            return true;
+        });
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.frame,  new DoanhThuFRM())  // Fragment mặc định
+                    .commit();
+        }
+
+    }
