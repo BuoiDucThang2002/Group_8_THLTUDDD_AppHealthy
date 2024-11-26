@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:theme="@style/Theme.AppCompat"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="50dp"
+    >
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="25dp"
+        android:text="ĐĂNG NHẬP"
+        android:layout_marginBottom="15dp"
+        android:textColor="#359345"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Chào mừng Thầy, Cô đến với App bán hàng thực phẩm"
+        android:layout_marginBottom="15dp"
+        android:layout_marginHorizontal="50dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background"
+            android:height="50dp"
+            android:layout_marginHorizontal="30dp"
+            android:textColor="@color/black"
+            android:hint="Nhập email hoặc số điện thoại"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:textColorHint="@color/gray"
+
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        >
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="30dp"
+            android:height="50dp"
+            android:background="@drawable/edit_text_background"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:hint="Nhập mật khẩu"
+            android:inputType="textPassword"
+            android:textColorHint="@color/gray"
+            android:paddingLeft="10dp"
+            android:drawableEnd="@drawable/ic_eye_closed"
+            android:paddingRight="10dp"
+            />
+
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:layout_gravity="end"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/blue"
+        />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <View
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="Hay"/>
+        <View
+            android:layout_width="120dp"
+            android:layout_height="1dp"
+            android:background="@color/black" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:background="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/twitter"
+            android:scaleType="fitXY"
+            android:contentDescription="Ảnh 1"
+            />
+        <ImageButton
+            android:background="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/facebook"
+            android:scaleType="fitXY"
+            android:layout_marginHorizontal="50dp"
+            android:contentDescription="Ảnh 1"
+
+            />
+        <ImageButton
+            android:background="@color/white"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/google"
+            android:scaleType="fitXY"
+            android:contentDescription="Ảnh 1"
+
+            />
+    </LinearLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/button_background"
+        android:text="Đăng nhập"
+android:textColor="@color/white"
+        android:textSize="22dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn không có tài khoản ?"
+            android:textSize="16dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/dangky"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Đăng ký"
+            android:textSize="16dp"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:textColor="@color/blue"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</LinearLayout>
