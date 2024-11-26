@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".dieukhoansudung"
+    android:background="@color/primary"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="20dp"
+        >
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:src="@drawable/iconback"
+            android:layout_gravity="start"
+            android:layout_marginRight="40dp"
+            android:background="@color/primary"
+            android:contentDescription="ảnh"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Điều khoản sử dụng"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:textStyle="bold"
+android:layout_marginRight="90dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/white">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/termsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:padding="8dp"
+                android:textAlignment="viewStart"
+                android:text="Khi sử dụng ứng dụng bán hàng thực phẩm này, bạn đồng ý tuân thủ các điều khoản và điều kiện dưới đây:\n\n1. Mục Đích Sử Dụng: Ứng dụng này được thiết kế để cung cấp các sản phẩm thực phẩm chất lượng cao đến khách hàng. Bạn chỉ được phép sử dụng ứng dụng này cho mục đích cá nhân, phi thương mại.\n\n2. Thông Tin Tài Khoản: Bạn có trách nhiệm bảo vệ thông tin đăng nhập và bảo mật tài khoản của mình. Ứng dụng không chịu trách nhiệm nếu có bất kỳ mất mát nào xảy ra do việc tiết lộ thông tin tài khoản.\n\n3. Đặt Hàng và Thanh Toán: Tất cả các đơn đặt hàng được thực hiện thông qua ứng dụng phải tuân theo chính sách thanh toán và giao hàng của chúng tôi. Bạn đồng ý cung cấp thông tin chính xác để đảm bảo quá trình xử lý đơn hàng nhanh chóng và chính xác.\n\n4. Chính Sách Hoàn Trả: Chúng tôi cam kết cung cấp sản phẩm tốt nhất đến khách hàng. Nếu có bất kỳ vấn đề gì với đơn hàng của bạn, vui lòng liên hệ bộ phận chăm sóc khách hàng trong vòng 24 giờ kể từ khi nhận hàng.\n\n5. Quyền Sở Hữu Trí Tuệ: Mọi nội dung, hình ảnh và thông tin trên ứng dụng đều thuộc quyền sở hữu của chúng tôi. Bạn không được sao chép, tái sử dụng hoặc phân phối lại mà không có sự đồng ý bằng văn bản từ chúng tôi.\n\n6. Thay Đổi Điều Khoản: Chúng tôi có quyền thay đổi các điều khoản sử dụng bất kỳ lúc nào mà không cần thông báo trước. Bạn nên kiểm tra lại các điều khoản này định kỳ để cập nhật các thay đổi mới nhất.\n\n7. Điều Khoản Khác: Việc sử dụng ứng dụng đồng nghĩa với việc bạn đã chấp nhận tất cả các điều khoản nêu trên. Nếu bạn không đồng ý, vui lòng ngừng sử dụng ứng dụng."/>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+
+</LinearLayout>
