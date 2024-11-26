@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/fake7"
+        android:title="Doanh thu" />
+
+    <item
+        android:id="@+id/navigation_search"
+        android:icon="@drawable/fake8"
+        android:title="Sản phẩm" />
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/fake9"
+        android:title="Khách hàng" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/fake10"
+        android:title="Cá nhân" />
+</menu>
