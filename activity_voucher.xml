@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary"
+    tools:context=".Voucher">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_marginTop="20dp"
+        >
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:src="@drawable/iconback"
+            android:layout_gravity="start"
+            android:layout_marginRight="50dp"
+            android:background="@color/primary"
+            android:contentDescription="ảnh"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Voucher giảm giá"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center"
+            />
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:src="@drawable/icbuy"
+            android:layout_gravity="end"
+            android:layout_marginLeft="50dp"
+            android:background="@color/primary"
+            android:contentDescription="ảnh"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_top_corners"
+        >
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="@drawable/search_text_background"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    android:hint="Tìm sản phẩm"
+    android:textColorHint="@color/black"
+    android:paddingLeft="10dp"
+    />
+    </LinearLayout>
+</LinearLayout>
