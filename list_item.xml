@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@color/white"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:descendantFocusability="blocksDescendants"
+    >
+<ImageView
+    android:id="@+id/anhsp"
+    android:layout_width="120dp"
+    android:layout_height="130dp"
+    android:src="@drawable/thitlon"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:background="@drawable/border_rounded"
+
+    />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            >
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dẻ sườn bò hola"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:layout_marginTop="10dp"
+                />
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/fake2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="bottom"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                >
+                <TextView
+                    android:id="@+id/gia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35,000 "
+                    android:textColor="@color/black"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" /1kg"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+
+                    />
+
+                <ImageButton
+                    android:backgroundTint="@color/white"
+                    android:id="@+id/buy"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="100dp"
+                    android:scaleType="fitXY"
+                    android:background="@color/white"
+                    android:contentDescription="Ảnh 1"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:clickable="true"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/buy"  />
+
+            </LinearLayout>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/love"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:scaleType="fitXY"
+            android:clickable="true"
+            android:backgroundTint="@color/white"
+
+            android:src="@drawable/unlove" />
+    </LinearLayout>
+
+</LinearLayout>
